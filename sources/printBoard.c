@@ -1,4 +1,4 @@
-#include "../includes/Board.h"
+#include "Board.h"
 
 
 void	clearScreen(void)

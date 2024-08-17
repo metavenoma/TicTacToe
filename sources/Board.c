@@ -1,4 +1,4 @@
-#include "../includes/Board.h"
+#include "Board.h"
 
 void *(*ttt_calloc)(size_t, size_t) = calloc;
 
@@ -23,6 +23,7 @@ int	initBoard(t_board *board, int grid)
 				free(board->_matrix[j]);
 			}
 			free(board->_matrix);
+			free(board);
 			return (BOARD_ERROR);
 		}
 	}

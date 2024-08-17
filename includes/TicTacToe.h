@@ -5,8 +5,10 @@
 extern "C" {
 #endif
 
-#include "Board.h"
 #include <unistd.h>
+#include "Board.h"
+#include "Game.h"
+#include "Exit.h"
 
 #ifdef __cplusplus
 }
