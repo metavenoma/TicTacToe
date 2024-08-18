@@ -28,3 +28,27 @@ int	isGameOver(int **board)
 	}
 	return (TRUE);
 }
+
+int	checkGameState(int **board)
+{
+	int	winner = checkWinCondition(board);
+	if (winner)
+	{
+		switch (winner)
+		{
+			case PLAYER_1:
+				printf("PLAYER 1 WINS!\n");
+				break ;
+			case PLAYER_2:
+				printf("PLAYER 2 WINS!\n");
+				break ;
+		}
+		return (END_STATE);
+	}
+	if (isGameOver(board))
+	{
+		printf("IS A DRAW :/\n");
+		return (END_STATE);
+	}
+	return (RUNNING_STATE);
+}

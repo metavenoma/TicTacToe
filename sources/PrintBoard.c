@@ -10,7 +10,7 @@ void	clearScreen(void)
 	#endif
 }
 
-void	printBoard(int **board)
+void	printHeader(void)
 {
 	clearScreen();
 
@@ -36,8 +36,11 @@ void	printBoard(int **board)
 	printf("	░█▀█░█▀▄░░░░░░░█░█░█░█░░░░░▀█▀░█▀█░░░█▀▀░█░█░▀█▀░▀█▀\n");
 	printf("	░█░█░█▀▄░░░░░░░▄▀▄░▄▀▄░░░░░░█░░█░█░░░█▀▀░▄▀▄░░█░░░█░\n");
 	printf("	░▀▀▀░▀░▀░░░░░░░▀░▀░▀░▀░░░░░░▀░░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░░▀░\n");
-	printf("\t\t\t    ");
-	
+}
+
+void	printBoard(int **board)
+{
+	printf("\n\t\t\t    ");	
 	for (int col = 0; col < GRID_SIZE; col++)
 	{
 		printf(" %d  ", col + 1);

@@ -14,6 +14,8 @@ extern "C" {
 #include <stdlib.h>
 
 int	initBoard(int **board);
+void	resetBoard(int **board);
+void	printHeader(void);
 void	printBoard(int **board);
 
 extern void *(*ttt_calloc)(size_t, size_t);

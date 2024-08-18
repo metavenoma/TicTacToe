@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "GameOver.h"
+#include "Error.h"
 
 void	runGame(void)
 {
@@ -27,25 +28,40 @@ void	placeMove(int **board, int x, int y, int player)
 	board[x][y] = player;
 }
 
+void	clearInputBuffer(void)
+{
+	int ch;
+	while ((ch = getchar()) != '\n' && ch != EOF)
+		;
+}
+
+int	playerAction(int **board)
+{
+	static int	player = 1;
+	char		row, col;
+	
+	printf("Player %d, enter your move (e.g., A3): ", player);
+	col = getchar();
+	row = getchar();
+
+	int	game_state = getInput(row, col, board, player);
+	if (resolveInput(game_state, board) == NEXT_STATE)
+		player = (player == 1) ? 2 : 1;
+	printBoard(board);
+	clearInputBuffer();
+	if (checkGameState(board) == END_STATE)
+		exitGame(board);
+	return (0);
+}
+
 void	gameLoop(int **board)
 {
-	int	player = 1;
-	char	row, col;
-	int	x = 0, y = 0;
-
+	printHeader();
+	printBoard(board);
 	while (1)
 	{
-		printBoard(board);
-		printf("Player %d, enter your move (e.g., A3): ", player);
-		col = getchar();
-		row = getchar();
-		getchar();
-
-		if (parseInput(row, col, &x, &y, board) == TRUE
-				&& isMovePossible(board, x, y))
-		{
-			placeMove(board, x, y, player);
-			player = (player == 1) ? 2 : 1;
+		playerAction(board);
+/*		error = checkGameState(board);
 			if (isGameOver(board))
 			{
 				printf("\n\nDRAW\n\n");
@@ -57,6 +73,10 @@ void	gameLoop(int **board)
 				break ;
 			}
 		}
+//		errorHandLing(error):
+		else if (parseInput(row, col, &x, &y, board) == TRUE
+				&& !isMovePossible(board, x, y))
+			errorHandling(MOVE_ERROR);*/
 	}
 	exitGame(board);
 }
