@@ -46,6 +46,11 @@ void	gameLoop(t_board *board)
 		{
 			placeMove(board, x, y, player);
 			player = (player == 1) ? 2 : 1;
+			if (isGameOver(board))
+			{
+				printf("\n\nDRAW\n\n");
+				break ;
+			}
 			if (checkWinCondition(board))
 			{
 				printf("\n\nWIN\n\n");
