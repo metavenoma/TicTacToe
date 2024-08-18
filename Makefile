@@ -4,7 +4,7 @@ OBJ_PATH = objects/
 INC = -I ./includes
 
 SRC = sources/main.c sources/Board.c sources/Game.c sources/printBoard.c
-SRC += sources/Exit.c
+SRC += sources/Exit.c sources/ParseInput.c sources/GameOver.c
 SRC_OBJ = $(addprefix $(OBJ_PATH), $(SRC:.c=.o))
 
 TEST_SRC = $(SRC) tests/boardTests.cpp
@@ -25,6 +25,11 @@ $(OBJ_PATH)%.o : %.cpp
 
 $(NAME): $(SRC_OBJ)
 	$(CC) $(CFLAGS) $(SRC_OBJ) $(INC) -o $(NAME)
+
+install: $(NAME) install_man
+
+install_man:
+	@bash install_man.sh
 
 all: $(NAME)
 

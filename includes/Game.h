@@ -6,14 +6,16 @@
 {
 #endif
 
+#include "TicTacToe.h"
+
 typedef struct s_game
 {
 	int	ac;
 	char	**av;
 }	t_game;
 
-#include "TicTacToe.h"
-
+int	parseInput(char row, char col, int *x, int *y, t_board *board);
+void	gameLoop(t_board *board);
 void	runGame(void);
 
 #ifdef __cplusplus

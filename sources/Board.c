@@ -4,7 +4,7 @@ void *(*ttt_calloc)(size_t, size_t) = calloc;
 
 int	initBoard(t_board *board, int grid)
 {
-	if (grid < 3 || grid > MAX_GRID_SIZE)
+	if (grid < 3 || grid > GRID_SIZE)
 	{
 		board->_matrix = NULL;
 		return (FALSE);

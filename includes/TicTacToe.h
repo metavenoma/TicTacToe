@@ -6,6 +6,8 @@ extern "C" {
 #endif
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "Board.h"
 #include "Game.h"
 #include "Exit.h"

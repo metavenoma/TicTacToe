@@ -1,0 +1,79 @@
+.TH INITBOARD 3 "August 2024" "TicTacToe Library" "Function Reference"
+
+.SH NAME
+initBoard \- initialize the Tic-Tac-Toe board
+
+.SH SYNOPSIS
+.nf
+.B #include <TicTacToe.h>
+.BI "int initBoard(t_board *board, int grid);"
+.fi
+
+.SH DESCRIPTION
+The
+.B initBoard
+function initializes a Tic-Tac-Toe board with a specified grid size. It allocates memory for the board's matrix based on the grid size and stores the grid size in the 
+.I board
+structure.
+
+.PP
+The grid size must be between 3 and 
+.B MAX_GRID_SIZE.
+If the grid size is outside this range, the function will set the 
+.I _matrix
+pointer to 
+.B NULL
+and return 
+.B FALSE.
+
+.SH PARAMETERS
+.TP
+.I board
+A pointer to a 
+.B t_board
+structure where the board information will be stored.
+
+.TP
+.I grid
+An integer specifying the desired size of the grid. It must be between 3 and 
+.B MAX_GRID_SIZE.
+
+.SH RETURN VALUE
+.B initBoard
+returns
+.B TRUE
+if the board was successfully initialized.
+
+.PP
+If the grid size is invalid, the function returns 
+.B FALSE
+and sets the 
+.I _matrix
+pointer in the 
+.B t_board
+structure to 
+.B NULL.
+
+.PP
+If the memory allocation fails, the function returns 
+.B BOARD_ERROR
+and frees any allocated memory.
+
+.SH ERRORS
+The following error codes are defined for 
+.B initBoard:
+.TP
+.B FALSE
+The grid size is invalid, or the memory allocation failed.
+
+.TP
+.B BOARD_ERROR
+Memory allocation for the matrix or its elements failed.
+
+.SH SEE ALSO
+.BR free (3),
+.BR calloc (3),
+.BR t_board (3)
+
+.SH AUTHOR
+Written by metavenoma.
