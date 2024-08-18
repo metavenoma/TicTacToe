@@ -10,10 +10,8 @@ void	clearScreen(void)
 	#endif
 }
 
-void	printBoard(t_board *board)
+void	printBoard(int **board)
 {
-	int	grid = board->_grid;
-	
 	clearScreen();
 
 	printf("▄▄▄█████▓ ██▓ ▄████▄  ▄▄▄█████▓ ▄▄▄       ▄████▄  ▄▄▄█████▓ ▒█████  ▓█████ \n");
@@ -40,32 +38,32 @@ void	printBoard(t_board *board)
 	printf("	░▀▀▀░▀░▀░░░░░░░▀░▀░▀░▀░░░░░░▀░░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░░▀░\n");
 	printf("\t\t\t    ");
 	
-	for (int col = 0; col < grid; col++)
+	for (int col = 0; col < GRID_SIZE; col++)
 	{
 		printf(" %d  ", col + 1);
 	}
 	printf("\n");
 
-	for (int row = 0; row < grid; row++)
+	for (int row = 0; row < GRID_SIZE; row++)
 	{
 		if (row == 0)
 		{
 			printf("\t\t\t   ");
-			for (int col = 0; col < grid; col++)
+			for (int col = 0; col < GRID_SIZE; col++)
 			{
 				printf(" ---");
 			}
 			printf("\n");
 		}
 		printf("\t\t\t  %c", row + 'A');
-		for (int col = 0; col < grid; col++)
+		for (int col = 0; col < GRID_SIZE; col++)
 		{
-			printf("| %c ", board->_matrix[row][col] == 0 ? ' ' : (board->_matrix[row][col] == 1 ? 'X' : 'O'));
+			printf("| %c ", board[row][col] == 0 ? ' ' : (board[row][col] == 1 ? 'X' : 'O'));
 		}
 		printf("|\n");
 
 		printf("\t\t\t   ");
-		for (int col = 0; col < grid; col++)
+		for (int col = 0; col < GRID_SIZE; col++)
 		{
 			printf(" ---");
 		}

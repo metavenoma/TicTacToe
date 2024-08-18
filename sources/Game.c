@@ -3,10 +3,10 @@
 
 void	runGame(void)
 {
-	t_board	*board;
+	int	**board;
 	
-	board = (t_board *)malloc(sizeof(t_board));	
-	if (!initBoard(board, GRID_SIZE))
+	board = (int **)malloc(sizeof(int *) * GRID_SIZE);
+	if (!board || !initBoard(board))
 	{
 		printf("ERROR: COULD NOT CREATE BOARD\n");
 		return ;
@@ -17,17 +17,17 @@ void	runGame(void)
 	return ;
 }
 
-int	isMovePossible(t_board *board, int x, int y)
+int	isMovePossible(int **board, int x, int y)
 {
-	return (board->_matrix[x][y] == 0);
+	return (board[x][y] == 0);
 }
 
-void	placeMove(t_board *board, int x, int y, int player)
+void	placeMove(int **board, int x, int y, int player)
 {
-	board->_matrix[x][y] = player;
+	board[x][y] = player;
 }
 
-void	gameLoop(t_board *board)
+void	gameLoop(int **board)
 {
 	int	player = 1;
 	char	row, col;

@@ -13,14 +13,8 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct s_board
-{
-	int	_grid;
-	int	**_matrix;
-}	t_board;
-
-int	initBoard(t_board *board, int grid);
-void	printBoard(t_board *board);
+int	initBoard(int **board);
+void	printBoard(int **board);
 
 extern void *(*ttt_calloc)(size_t, size_t);
 

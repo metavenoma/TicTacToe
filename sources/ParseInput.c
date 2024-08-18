@@ -1,7 +1,7 @@
 #include "Board.h"
 #include "Exit.h"
 
-int	parseInput(char row, char col, int *x, int *y, t_board *board)
+int	parseInput(char row, char col, int *x, int *y, int **board)
 {
 	if (row == 'X' && col == 'X')
 		exitGame(board);

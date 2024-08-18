@@ -9,7 +9,7 @@
 
 void	winLoseScreen(int player);
 void	drawScreen(void);
-int	checkWinCondition(t_board *board);
-int	isGameOver(t_board *board);
+int	checkWinCondition(int **board);
+int	isGameOver(int **board);
 
 #endif

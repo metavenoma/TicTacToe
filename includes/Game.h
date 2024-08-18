@@ -8,14 +8,8 @@
 
 #include "TicTacToe.h"
 
-typedef struct s_game
-{
-	int	ac;
-	char	**av;
-}	t_game;
-
-int	parseInput(char row, char col, int *x, int *y, t_board *board);
-void	gameLoop(t_board *board);
+int	parseInput(char row, char col, int *x, int *y, int **board);
+void	gameLoop(int **board);
 void	runGame(void);
 
 #ifdef __cplusplus

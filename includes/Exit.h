@@ -3,6 +3,6 @@
 
 #include "Board.h"
 
-void	exitGame(t_board *board);
+void	exitGame(int **board);
 
 #endif

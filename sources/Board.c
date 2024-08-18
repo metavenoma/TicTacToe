@@ -2,27 +2,17 @@
 
 void *(*ttt_calloc)(size_t, size_t) = calloc;
 
-int	initBoard(t_board *board, int grid)
+int	initBoard(int **board)
 {
-	if (grid < 3 || grid > GRID_SIZE)
+	for (int i = 0; i < GRID_SIZE; i++)
 	{
-		board->_matrix = NULL;
-		return (FALSE);
-	}	
-	board->_grid = grid;
-	board->_matrix = (int **)ttt_calloc(board->_grid, sizeof(int *));
-	if (board->_matrix == NULL)
-		return (BOARD_ERROR);
-	for (int i = 0; i < board->_grid; i++)
-	{
-		board->_matrix[i] = (int *)ttt_calloc(board->_grid, sizeof(int *));
-		if (board->_matrix[i] == NULL)
+		board[i] = (int *)ttt_calloc(GRID_SIZE, sizeof(int *));
+		if (board[i] == NULL)
 		{
 			for (int j = 0; j < i; j++)
 			{
-				free(board->_matrix[j]);
+				free(board[j]);
 			}
-			free(board->_matrix);
 			free(board);
 			return (BOARD_ERROR);
 		}
