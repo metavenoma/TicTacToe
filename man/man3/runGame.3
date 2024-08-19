@@ -1,0 +1,32 @@
+.TH RUNGAME 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+runGame \- initialize and run the Tic-Tac-Toe game
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "void runGame(void);"
+.fi
+
+.SH DESCRIPTION
+The
+.B runGame
+function initializes the Tic-Tac-Toe game by allocating memory for the game board and starting the main game loop. It checks for errors in board creation and handles the game’s lifecycle.
+
+.SH PARAMETERS
+None.
+
+.SH RETURN VALUE
+This function does not return a value.
+
+.SH NOTES
+The board is dynamically allocated, and the function ensures proper memory management and error handling.
+
+.SH SEE ALSO
+.BR initBoard (3),
+.BR printBoard (3),
+.BR gameLoop (3),
+.BR exitGame (3)
+
+.SH AUTHOR
+metavenoma <veronauan@gmail.com>

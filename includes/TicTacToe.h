@@ -8,9 +8,7 @@ extern "C" {
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Board.h"
 #include "Game.h"
-#include "Exit.h"
 
 #ifdef __cplusplus
 }

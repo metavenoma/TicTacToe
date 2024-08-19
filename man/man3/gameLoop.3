@@ -1,0 +1,29 @@
+.TH GAMELOOP 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+gameLoop \- manage the main game loop of Tic-Tac-Toe
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "void gameLoop(int **board);"
+.fi
+
+.SH DESCRIPTION
+The
+.B gameLoop
+function manages the main loop of the Tic-Tac-Toe game, continually prompting players for their moves until the game ends.
+
+.SH PARAMETERS
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+
+.SH RETURN VALUE
+This function does not return a value.
+
+.SH SEE ALSO
+.BR playerAction (3),
+.BR exitGame (3)
+
+.SH AUTHOR
+metavenoma <veronauan@example.com>

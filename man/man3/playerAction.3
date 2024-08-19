@@ -1,0 +1,32 @@
+.TH PLAYERACTION 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+playerAction \- handle a player's move in the Tic-Tac-Toe game
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "int playerAction(int **board);"
+.fi
+
+.SH DESCRIPTION
+The
+.B playerAction
+function prompts the current player to enter their move, processes the input, and updates the game state accordingly. It alternates between Player 1 and Player 2 and checks for game over conditions.
+
+.SH PARAMETERS
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+
+.SH RETURN VALUE
+This function always returns
+.B 0.
+
+.SH SEE ALSO
+.BR getInput (3),
+.BR resolveInput (3),
+.BR checkGameState (3),
+.BR exitGame (3)
+
+.SH AUTHOR
+Your Name <veronauan@gmail.com>

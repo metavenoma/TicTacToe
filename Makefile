@@ -40,6 +40,11 @@ $(NAME): $(SRC_OBJ) $(MAIN_OBJ)
 tests: $(SRC_OBJ) $(TEST_OBJ)
 	$(CPP) $(CPPFLAGS) $(TEST_OBJ) $(SRC_OBJ) -I ./includes -lgtest -lgtest_main -pthread -o $(TEST_NAME)
 
+install: $(NAME) install_man
+
+install_man:
+	@bash install_man.sh
+
 all: $(NAME)
 
 # Clean up object files

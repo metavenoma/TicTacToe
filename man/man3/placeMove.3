@@ -1,0 +1,38 @@
+.TH PLACEMOVE 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+placeMove \- place a player's move on the Tic-Tac-Toe board
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "void placeMove(int **board, int x, int y, int player);"
+.fi
+
+.SH DESCRIPTION
+The
+.B placeMove
+function places the current player's marker on the Tic-Tac-Toe board at the specified coordinates.
+
+.SH PARAMETERS
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+.TP
+.B "int x"
+The row coordinate of the move.
+.TP
+.B "int y"
+The column coordinate of the move.
+.TP
+.B "int player"
+The current player's marker (e.g., 1 for Player 1, 2 for Player 2).
+
+.SH RETURN VALUE
+This function does not return a value.
+
+.SH SEE ALSO
+.BR isMovePossible (3),
+.BR playerAction (3)
+
+.SH AUTHOR
+metavenoma <veronauan@gmail.com>

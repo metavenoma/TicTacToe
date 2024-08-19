@@ -1,6 +1,3 @@
-#include "Board.h"
-#include "Exit.h"
-#include "Error.h"
 #include "Game.h"
 
 int	getInput(char row, char col, int **board, int player)

@@ -1,6 +1,4 @@
 #include "Game.h"
-#include "GameOver.h"
-#include "Error.h"
 
 void	runGame(void)
 {
@@ -59,24 +57,6 @@ void	gameLoop(int **board)
 	printHeader();
 	printBoard(board);
 	while (1)
-	{
 		playerAction(board);
-/*		error = checkGameState(board);
-			if (isGameOver(board))
-			{
-				printf("\n\nDRAW\n\n");
-				break ;
-			}
-			if (checkWinCondition(board))
-			{
-				printf("\n\nWIN\n\n");
-				break ;
-			}
-		}
-//		errorHandLing(error):
-		else if (parseInput(row, col, &x, &y, board) == TRUE
-				&& !isMovePossible(board, x, y))
-			errorHandling(MOVE_ERROR);*/
-	}
 	exitGame(board);
 }

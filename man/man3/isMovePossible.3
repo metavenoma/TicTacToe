@@ -1,0 +1,39 @@
+.TH ISMOVEPOSSIBLE 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+isMovePossible \- check if a move is possible on the Tic-Tac-Toe board
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "int isMovePossible(int **board, int x, int y);"
+.fi
+
+.SH DESCRIPTION
+The
+.B isMovePossible
+function checks if a move can be made at the specified coordinates on the Tic-Tac-Toe board. A move is possible if the specified cell is empty.
+
+.SH PARAMETERS
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+.TP
+.B "int x"
+The row coordinate of the move.
+.TP
+.B "int y"
+The column coordinate of the move.
+
+.SH RETURN VALUE
+The function returns
+.B 1
+if the move is possible, and
+.B 0
+if the move is not possible.
+
+.SH SEE ALSO
+.BR placeMove (3),
+.BR playerAction (3)
+
+.SH AUTHOR
+metavenoma <veronauan@gmail.com>

@@ -1,0 +1,39 @@
+.TH RESOLVEINPUT 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+resolveInput \- handle game state changes based on player input
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "int resolveInput(int game_state, int **board);"
+.fi
+
+.SH DESCRIPTION
+The
+.B resolveInput
+function handles the game state based on the result of player input. It manages exiting the game, restarting the board, or handling invalid input.
+
+.SH PARAMETERS
+.TP
+.B "int game_state"
+The current state of the game after processing player input.
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+
+.SH RETURN VALUE
+The function returns one of the following:
+.TP
+.B NEXT_STATE
+If the game should continue to the next move.
+.TP
+.B FALSE
+If the game is in an end state or the input was invalid.
+
+.SH SEE ALSO
+.BR getInput (3),
+.BR exitGame (3),
+.BR resetBoard (3)
+
+.SH AUTHOR
+Your Name <veronauan@gmail.com>

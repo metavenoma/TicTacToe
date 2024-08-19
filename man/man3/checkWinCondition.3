@@ -1,0 +1,76 @@
+.TH CHECKWINCONDITION 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+checkWinCondition \- check for a win condition in a Tic-Tac-Toe game
+
+.SH SYNOPSIS
+.nf
+.B #include <GetInput.h>
+.BI "int checkWinCondition(int **board);"
+.fi
+
+.SH DESCRIPTION
+The
+.B checkWinCondition
+function checks the current state of the Tic-Tac-Toe board to determine if a player has won the game. The board is represented as a 2D array of integers, where each element can have one of the following values:
+.TP
+.B 0
+The position is empty.
+.TP
+.B PLAYER_1
+The position is occupied by Player 1.
+.TP
+.B PLAYER_2
+The position is occupied by Player 2.
+
+The function checks for three possible win conditions:
+.IP \(bu 4
+A player occupies all positions in any of the diagonals.
+.IP \(bu 4
+A player occupies all positions in any row.
+.IP \(bu 4
+A player occupies all positions in any column.
+
+.SH PARAMETERS
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+
+.SH RETURN VALUE
+The function returns the following values based on the state of the board:
+.TP
+.B PLAYER_1
+If Player 1 has won the game.
+.TP
+.B PLAYER_2
+If Player 2 has won the game.
+.TP
+.B FALSE
+If no player has won the game.
+
+.SH EXAMPLE
+.nf
+#include <GetInput.h>
+
+int main() {
+    int **board = initBoard();
+    // Set up the board
+    if (checkWinCondition(board) == PLAYER_1) {
+        printf("Player 1 wins!\n");
+    }
+    freeBoard(board);
+    return 0;
+}
+.fi
+
+.SH NOTES
+The macro
+.B GRID_SIZE
+is assumed to be defined as 3.
+
+.SH SEE ALSO
+.BR initBoard (3),
+.BR freeBoard (3),
+.BR other_related_functions (3)
+
+.SH AUTHOR
+metavenoma <veronauan@gmail.com>

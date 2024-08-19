@@ -1,0 +1,51 @@
+.TH GETINPUT 3 "August 2024" "Tic-Tac-Toe Library" "Library Functions Manual"
+.SH NAME
+getInput \- process player input for the Tic-Tac-Toe game
+
+.SH SYNOPSIS
+.nf
+.B #include "Game.h"
+.BI "int getInput(char row, char col, int **board, int player);"
+.fi
+
+.SH DESCRIPTION
+The
+.B getInput
+function processes the player's input, mapping the row and column characters to board coordinates. It checks for special input commands (e.g., exit or restart) and validates the move.
+
+.SH PARAMETERS
+.TP
+.B "char row"
+The character representing the row entered by the player.
+.TP
+.B "char col"
+The character representing the column entered by the player.
+.TP
+.B "int **board"
+A pointer to a 2D array representing the Tic-Tac-Toe board.
+.TP
+.B "int player"
+The current player's marker (e.g., 1 for Player 1, 2 for Player 2).
+
+.SH RETURN VALUE
+The function returns one of the following:
+.TP
+.B EXIT_CODE
+If the player enters the exit command ('X' and 'X').
+.TP
+.B RESTART_CODE
+If the player enters the restart command ('R' and 'R').
+.TP
+.B NEXT_STATE
+If the input is valid and the move is successfully placed.
+.TP
+.B INVALID_INPUT
+If the input is invalid or the move is not possible.
+
+.SH SEE ALSO
+.BR resolveInput (3),
+.BR isMovePossible (3),
+.BR placeMove (3)
+
+.SH AUTHOR
+metavenoma <veronauan@gmail.com>

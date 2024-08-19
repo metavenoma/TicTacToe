@@ -12,6 +12,7 @@ extern "C" {
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "TicTacToe.h"
 
 int	initBoard(int **board);
 void	resetBoard(int **board);
