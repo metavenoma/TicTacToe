@@ -16,6 +16,9 @@ extern "C" {
 int	initBoard(int **board);
 void	resetBoard(int **board);
 void	printHeader(void);
+void	printRestart(void);
+void	printGoodBye(void);
+void	printWinner(int player);
 void	printBoard(int **board);
 
 extern void *(*ttt_calloc)(size_t, size_t);

@@ -27,18 +27,17 @@ int	resolveInput(int game_state, int **board)
 	switch (game_state)
 	{
 		case EXIT_CODE:
-			printf("Goodbye!\n");
+			printGoodBye();
 			exitGame(board);
 			break ;
 		case NEXT_STATE:
-			printf("next state\n");
 			return (game_state);
 		case RESTART_CODE:
 			resetBoard(board);
-			printf("GAME RESTART\n");
+			printRestart();
 			break ;
 		case INVALID_INPUT:
-			printf("INVALID INPUT, TRY <ROW><COLUMN> e.g. C2");
+			printf("\033[1;31m\n\t\tINVALID INPUT, TRY <ROW><COLUMN> (e.g. \"C2\")\033[0m\n");
 			break ;
 	}
 	return (FALSE);
