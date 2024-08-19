@@ -28,7 +28,7 @@ cd TicTacToe
 make
 ```
 
-### Running the Program
+## Running the Program
 
 To run the Tic-Tac-Toe game:
 
@@ -36,13 +36,13 @@ To run the Tic-Tac-Toe game:
 ./TicTacToe
 ```
 
-### Installing Man Pages
+## Installing Man Pages
 
 ```sh
 sudo make install
 ```
 
-### Running Tests
+## Running Tests
 
 ```sh
 make tests
