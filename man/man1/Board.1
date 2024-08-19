@@ -1,0 +1,34 @@
+.\" Manpage for Board
+.\" Format: groff -man -Tascii Board.1
+.TH BOARD 1 "August 2024" "1.0" "Board"
+.SH NAME
+Board \- Functions for managing the Tic-Tac-Toe game board
+.SH SYNOPSIS
+.B #include "Board.h"
+.SH DESCRIPTION
+The \fBBoard\fR module provides functions for initializing, printing, and managing the Tic-Tac-Toe game board.
+
+.PP
+The board is represented as a 2D array of integers, with size determined by \fBGRID_SIZE\fR.
+
+.SH FUNCTIONS
+.TP
+.B void initBoard(int **board)
+.br
+Initializes the game board. Allocates memory for a \fBGRID_SIZE x GRID_SIZE\fR board and sets all positions to zero. Returns \fBTRUE\fR on success and \fBBOARD_ERROR\fR on failure.
+
+.TP
+.B void printBoard(int **board)
+.br
+Prints the current state of the game board to the terminal. Displays rows and columns with appropriate markers for empty, 'X', and 'O' positions.
+
+.SH FILES
+.TP
+.B Board.h
+Header file containing function prototypes and constants for the board operations.
+.TP
+.B Board.c
+Source file implementing the board management functions.
+
+.SH SEE ALSO
+.B Game(1)

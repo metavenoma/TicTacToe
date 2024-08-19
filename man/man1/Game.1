@@ -1,0 +1,54 @@
+.\" Manpage for Game
+.\" Format: groff -man -Tascii Game.1
+.TH GAME 1 "August 2024" "1.0" "Game"
+.SH NAME
+Game \- Functions for running the Tic-Tac-Toe game
+.SH SYNOPSIS
+.B #include "Game.h"
+.SH DESCRIPTION
+The \fBGame\fR module manages the overall game flow, including running the game loop, handling player actions, and determining game outcomes.
+
+.PP
+This module uses the \fBBoard\fR functions to interact with the game board and controls the game loop and player interactions.
+
+.SH FUNCTIONS
+.TP
+.B void runGame(void)
+.br
+Starts and runs the game. Initializes the game board, prints the initial state, and enters the game loop. Exits when the game is over.
+
+.TP
+.B int isMovePossible(int **board, int x, int y)
+.br
+Checks if a move is possible at the given coordinates \fIx\fR and \fIy\fR. Returns \fBTRUE\fR if the position is empty and \fBFALSE\fR otherwise.
+
+.TP
+.B void placeMove(int **board, int x, int y, int player)
+.br
+Places the move for the specified \fBplayer\fR at coordinates \fIx\fR and \fIy\fR.
+
+.TP
+.B void clearInputBuffer(void)
+.br
+Clears the input buffer to handle user input correctly.
+
+.TP
+.B int playerAction(int **board)
+.br
+Handles the player’s move by reading input and updating the board. Manages player turns and checks the game state after each move.
+
+.TP
+.B void gameLoop(int **board)
+.br
+The main game loop that continuously prompts the current player for their move, updates the board, and checks the game state until the game ends.
+
+.SH FILES
+.TP
+.B Game.h
+Header file containing function prototypes and constants for game management.
+.TP
+.B Game.c
+Source file implementing the game management functions.
+
+.SH SEE ALSO
+.B Board(1)
