@@ -18,8 +18,8 @@ This repository contains a C and C++ implementation of a Tic-Tac-Toe game. The p
 1. **Clone the Repository**
 
 ```sh
-git clone <https://github.com/metavenoma/TicTacToe.git>
-cd <TicTacToe>
+git clone https://github.com/metavenoma/TicTacToe.git
+cd TicTacToe
 ```
 
 2. **Build the Project**
